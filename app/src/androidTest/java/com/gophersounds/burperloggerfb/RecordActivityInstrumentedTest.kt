@@ -40,7 +40,7 @@ class RecordActivityInstrumentedTest{
         onView(withId(R.id.imgDelete)).check(matches(not(isDisplayed())))
         onView(withId(R.id.imgSave)).check(matches(not(isDisplayed())))
         onView(withId(R.id.imgMicrophone)).check(matches(withDrawable(R.drawable.ic_mic_black_24dp)))
-        onView(withId(R.id.txtDate)).check(matches(not(isDisplayed())))
+       // onView(withId(R.id.txtDate)).check(matches(not(isDisplayed())))
         onView(withId(R.id.rateBurp)).check(matches(not(isDisplayed())))
 
     }
@@ -64,8 +64,7 @@ class RecordActivityInstrumentedTest{
         onView(withId(R.id.imgSave))
                 .check(matches(isDisplayed()))
 
-        onView(withId(R.id.txtDate))
-                .check(matches(isDisplayed()))
+
     }
     /*
     @Test

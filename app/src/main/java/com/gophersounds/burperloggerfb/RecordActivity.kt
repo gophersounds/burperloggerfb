@@ -27,8 +27,7 @@ class RecordActivity : AppCompatActivity() {
         // microphone
         val imgMic = findViewById(R.id.imgMicrophone) as ImageView
 
-        val txtDate = findViewById(R.id.txtDate) as TextView
-        txtDate.visibility = View.INVISIBLE
+
 
         val rateBurp = findViewById(R.id.rateBurp) as RatingBar
         rateBurp.visibility = View.INVISIBLE

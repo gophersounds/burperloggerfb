@@ -43,16 +43,29 @@ class BurpDaoTest{
     @Test
     fun testAddingAndRetriveingDate(){
         val preInsertRetrievedBurps = burpDao.getAll()
+        val burpName = "Burp"
+        //val _id = 0
+        val starRating = 4.5
+        val HOF = 0
+        val fileName = "fileName"
+        val burpDate = System.currentTimeMillis()
 
-        val burp = Burp("Burp 1", 1)
+        val burp = Burp(burpName, 0, starRating, HOF, fileName, burpDate)
         burpDao.insertAll(burp)
 
         val postInsertRetrievedBurps = burpDao.getAll()
         val sizeDifference = postInsertRetrievedBurps.size - preInsertRetrievedBurps.size
         Assert.assertEquals(1, sizeDifference)
         val retrievedBurp = postInsertRetrievedBurps.last()
-        Assert.assertEquals("Burp 1", retrievedBurp.burpName)
-
+        Assert.assertEquals(retrievedBurp.burpName, burpName)
+       // Assert.assertEquals(retrievedBurp.id, _id)
+        Assert.assertEquals(retrievedBurp.starRating, starRating)
+        Assert.assertEquals(retrievedBurp.HOF, HOF)
+        Assert.assertEquals(retrievedBurp.fileName, fileName)
+        Assert.assertEquals(retrievedBurp.burpDate,  burpDate)
+        //Log.i("Test", retrievedBurp.id.toString())
+        //Assert.assertEquals(burpName, _id, starRating)
+        Log.i("Test", retrievedBurp.burpDate.toString())
     }
 
     @After
